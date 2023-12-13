@@ -21,7 +21,7 @@ public class Title extends World
     
     public void act()
 {
-    if(Greenfoot.getKey() != null){
+    if( Greenfoot.isKeyDown( "s" )){
         World game = new Game();
         Greenfoot.setWorld( game );
     }
