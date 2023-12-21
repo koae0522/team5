@@ -16,6 +16,8 @@ public class Game extends World
      Actor bikkuri= new bikkuri();
       Actor p1 = new player1();
        Actor p2 = new player2();
+       boolean inGame=false;
+       boolean result=false;
     public Game()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -31,25 +33,27 @@ public class Game extends World
     public void act()
     {
       int delayTime= Greenfoot.getRandomNumber(1000);
+      if(!inGame){
       Greenfoot.delay(delayTime);
+    }
       addObject(bikkuri, 500, 300 );
   
-      boolean inGame=true;
+      inGame=true;
       
-      if( Greenfoot.isKeyDown( "a" )&& inGame ){
-        if(!Greenfoot.isKeyDown( "l" )){
+      if( inGame &&!result){
+        if(Greenfoot.isKeyDown( "a" )){
             //1Pのかち
-           showText( "1Pの勝ち！", 0, 0 );
+           showText( "1Pの勝ち！", 50, 50 );
            inGame=false;
+           result=true;
+        }else if(Greenfoot.isKeyDown("l")){
+           showText("2noKati!",50,50);
+           inGame=false;
+           result=true;
         }
+        
     }
-    if( Greenfoot.isKeyDown( "l" )&& inGame ){
-        if(!Greenfoot.isKeyDown( "a" )){
-            //2Pのかち
-            showText( "2Pの勝ち！",0, 0 );
-            inGame=false;
-        }
-    }
+    
     
     }
     
