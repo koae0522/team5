@@ -16,6 +16,7 @@ public class Title extends World
     public Title()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+ 
         super(1024, 1024, 1);
         World game = new Game();
         Greenfoot.setWorld( game );
@@ -23,13 +24,15 @@ public class Title extends World
     
     public void act()
 {
-    
-       
-   
+    if( Greenfoot.isKeyDown( "s" )){
+        World game = new Game();
+        Greenfoot.setWorld( game );
+    }
 }
     
     
     
     
 }
+
 
