@@ -46,10 +46,15 @@ public class Game extends World
            showText( "1Pの勝ち！", 50, 50 );
            inGame=false;
            result=true;
+           World left = new left();
+           Greenfoot.setWorld(left);
+           
         }else if(Greenfoot.isKeyDown("l")){
            showText("2noKati!",50,50);
            inGame=false;
            result=true;
+           World right = new right();
+           Greenfoot.setWorld(right);
         }
         
     }

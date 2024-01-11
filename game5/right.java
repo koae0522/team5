@@ -17,5 +17,9 @@ public class right extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1020, 1020, 1); 
+        if( Greenfoot.isKeyDown( "s" )){
+        World title = new Title();
+        Greenfoot.setWorld( title );
+    }
     }
 }
