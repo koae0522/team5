@@ -18,6 +18,7 @@ public class Game extends World
        Actor p2 = new player2();
        boolean inGame=false;
        boolean result=false;
+       GreenfootSound bgm = null;
     public Game()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -27,33 +28,38 @@ public class Game extends World
        p1.getImage().scale(270,200);
        addObject(p2,700,700);
        p2.getImage().scale(270,200);
-  
+       //Greenfoot.playSound("pahupahu.mp3");
+        bgm = new GreenfootSound( "bgm.mp3" );
     }
      
     public void act()
     {
+      
       int delayTime= Greenfoot.getRandomNumber(1000);
+       bgm.playLoop();
       if(!inGame){
       Greenfoot.delay(delayTime);
     }
       addObject(bikkuri, 500, 300 );
-  
+      bgm.stop();
       inGame=true;
       
       if( inGame &&!result){
         if(Greenfoot.isKeyDown( "a" )){
-            //1Pのかち
-           showText( "1Pの勝ち！", 50, 50 );
+            //1Pのか
+           Greenfoot.playSound("katana.mp3");
            inGame=false;
            result=true;
            World left = new left();
+           Greenfoot.delay(3000);
            Greenfoot.setWorld(left);
            
         }else if(Greenfoot.isKeyDown("l")){
-           showText("2noKati!",50,50);
+           Greenfoot.playSound("katana.mp3");
            inGame=false;
            result=true;
            World right = new right();
+           Greenfoot.delay(3000);
            Greenfoot.setWorld(right);
         }
         

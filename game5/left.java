@@ -17,6 +17,7 @@ public class left extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1020, 1020, 1); 
+        Greenfoot.playSound("clear.mp3");
         if( Greenfoot.isKeyDown( "s" )){
         World title = new Title();
         Greenfoot.setWorld(title );
