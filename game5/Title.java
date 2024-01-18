@@ -20,11 +20,13 @@ public class Title extends World
         super(1024, 1024, 1);
         World game = new Game();
         Greenfoot.setWorld( game );
+        showText("sキーを押してスタート",600,600);
     }
     
     public void act()
 {
     if( Greenfoot.isKeyDown( "s" )){
+        
         World game = new Game();
         Greenfoot.setWorld( game );
     }

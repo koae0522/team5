@@ -35,7 +35,7 @@ public class Game extends World
     public void act()
     {
       
-      int delayTime= Greenfoot.getRandomNumber(1000);
+      int delayTime= Greenfoot.getRandomNumber(600);
        bgm.playLoop();
       if(!inGame){
       Greenfoot.delay(delayTime);
@@ -51,7 +51,7 @@ public class Game extends World
            inGame=false;
            result=true;
            World left = new left();
-           Greenfoot.delay(3000);
+           Greenfoot.delay(300);
            Greenfoot.setWorld(left);
            
         }else if(Greenfoot.isKeyDown("l")){
@@ -59,7 +59,7 @@ public class Game extends World
            inGame=false;
            result=true;
            World right = new right();
-           Greenfoot.delay(3000);
+           Greenfoot.delay(300);
            Greenfoot.setWorld(right);
         }
         
